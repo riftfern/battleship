@@ -1,4 +1,4 @@
-import { randCoords, SHIP_TYPES } from "../helpers/helpers";
+import { randomCords, SHIP_TYPES } from "../helpers/helpers";
 
 const Gameboard = () => {
   let board = Array(10)
@@ -9,7 +9,7 @@ const Gameboard = () => {
   let placedShips = [];
   const areAllShipsPlaced = () => placedShips.length === SHIP_TYPES.length;
 
-  const adjustCoords = (y0, x0, i, direction) => {
+  const adjustCords = (y0, x0, i, direction) => {
     let x = x0 + i;
     let y = y0;
     if (direction === "vertical") {
@@ -25,7 +25,7 @@ const Gameboard = () => {
     const valid = checkValid(ship.length, direction, y0, x0);
     if (valid) {
       for (let i = 0; i < ship.length; i++) {
-        const [y, x] = adjustCoords(y0, x0, i, direction);
+        const [y, x] = adjustCords(y0, x0, i, direction);
 
         board[y][x] = { ship, index: i };
       }
@@ -40,7 +40,7 @@ const Gameboard = () => {
   const checkValid = (length, direction, y0, x0) => {
     const cells = [];
     for (let i = 0; i < length; i++) {
-      const [y, x] = adjustCoords(y0, x0, i, direction);
+      const [y, x] = adjustCords(y0, x0, i, direction);
 
       if (y < 10 && x < 10) {
         cells.push(board[y][x]);
@@ -52,7 +52,7 @@ const Gameboard = () => {
   };
 
   const autoPlace = (ship) => {
-    const [y, x] = randCoords();
+    const [y, x] = randomCords();
     const changeOrient = Math.random() > 0.5;
     if (changeOrient) ship.changeDirection();
     const placed = placeShip(ship, y, x);
