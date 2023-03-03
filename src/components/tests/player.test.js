@@ -25,7 +25,7 @@ describe("player attack", () => {
   });
 });
 
-describe("Auto attack", () => {
+describe("auto attack", () => {
   test("attack enemy board", () => {
     enemy.autoAttack(playerBoard);
     const actual = playerBoard
@@ -36,7 +36,7 @@ describe("Auto attack", () => {
   });
 });
 
-describe("Reset Fleet", () => {
+describe("reset Fleet", () => {
   test("player fleets  w/ no reset are equal", () => {
     const fleet1 = player.getFleet();
     const fleet2 = player.getFleet();
