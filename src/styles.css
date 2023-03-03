@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+    background: aliceblue;
+    background-size: cover;
+}
+
+html,
+body{
+    font-size: 100%;
+}
+.game-containter{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.gameboard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.ship{
+    display: flex;
+    cursor: grab;
+    transition: transform 0.3s ease;
+}
+.vertical{
+    flex-direction: column;
+}
+.fleet-autoplace,
+.play-again,
+.start{
+    font-size: 1rem;
+    color: inherit;
+    text-transform: uppercase;
+    border-image-source: grid-border('p2');
+    background-color: aliceblue;
+    transform: scale(1);
+}
+.grid{
+    box-sizing: content-box;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+}
+.grid-cell{
+    border: 1px solid black;
+    width: 2rem;
+    height: 2rem;
+}
+.p1-grid{
+    border: 2px solid;
+    border-image-slice: 1;
+}
+.fleet-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: forestgreen;
+}
+.fleet-info{
+    display: none;
+    font-size: 1rem;
+    text-align: center;
+    transition: opacity 1s ease;
+}
+.info-container{
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+}
