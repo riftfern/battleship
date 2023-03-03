@@ -1,5 +1,6 @@
 import Game from "./components/factories/game";
 import { elements } from "./components/viewables/base";
+import "./styles.css";
 
 let gameType = "singleplayer";
 let game = Game(gameType);
