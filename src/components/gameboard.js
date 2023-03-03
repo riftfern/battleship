@@ -1,3 +1,0 @@
-const gameboard = () => {};
-
-export { gameboard };
