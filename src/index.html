@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lekton&family=Molengo&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TDD: BATTLESHIP</title>
 </head>
@@ -14,7 +17,7 @@
     </header>
     <main>
         <div class="game-container">
-            <div class="gameboard-container">
+            <div class="gameboards-container">
                 <div class="p1-gameboard gameboard">
                     <h2 class="grid-title">My Fleet</h2>
                     <div class="grid p1-grid"></div>
@@ -24,10 +27,10 @@
                     <div class="grid p2-grid"></div>
                 </div>
             </div>
-            <div class="fleet-container">
-                <h2>Place Fleet </h2>
-                <button class="fleet-autoplace">Auto-Place</button>
-                <span class="fleet-info">Drag n' Drop (double click to rotate)</span>
+            <div class="fleet-container slide-in">
+                <h2>Place Fleet</h2>
+                <button class="fleet-autoplace show">Auto-Place</button>
+                <span class="fleet-info show">Drag n' Drop (double click to rotate)</span>
                 <div class="fleet-draggable"></div>
 
                 <button class="start">Start</button>
