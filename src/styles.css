@@ -3,6 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --destroyer-color: rgb(173, 20, 0);
+    --destroyer-border: rgb(255, 8, 0);
+    --submarine-color: rgb(196, 152, 11);
+    --submarine-border:rgb(240, 209, 106);
+    --cruiser-color:rgb(55, 158, 7);
+    --cruiser-border:rgb(122, 240, 106);
+    --battleship-color: rgb(51, 63, 236);
+    --battleship-border:rgb(106, 137, 240);
+    --carrier-color: rgb(70, 6, 153);
+    --carrier-border:rgb(157, 106, 240);
+}
 
 html{
     position: relative;
@@ -14,6 +26,12 @@ html{
 html,
 body{
     font-size: 100%;
+}
+.title{
+    font-size: 2.2rem;
+    margin: 1.5rem 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
 }
 .game-containter{
     position: relative;
@@ -27,11 +45,6 @@ body{
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1rem;
-}
-.ship{
-    display: flex;
-    cursor: grab;
-    transition: transform 0.3s ease;
 }
 .vertical{
     flex-direction: column;
@@ -52,15 +65,29 @@ body{
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+    width: 20rem;
+    height: 20rem;
+}
+.grid:hover{
+    border-radius: 5px;
 }
 .grid-cell{
     border: 1px solid black;
     width: 2rem;
     height: 2rem;
 }
+.grid-cell:hover{
+    cursor: crosshair;
+    border-radius: 5px;
+}
 .p1-grid{
     border: 2px solid;
     border-image-slice: 1;
+}
+.p2-grid{
+    display: none;
+    border:2px solid;
+    cursor:none;
 }
 .fleet-container{
     position: absolute;
@@ -69,6 +96,7 @@ body{
     justify-content: space-around;
     align-items: center;
     color: forestgreen;
+    top: 1rem;
 }
 .fleet-info{
     display: none;
@@ -83,4 +111,33 @@ body{
     left:0;
     display: flex;
     justify-content: center;
+}
+
+.ship{
+    display: flex;
+    cursor: grab;
+    transition: transform 0.3s ease;
+}
+.vertical{
+    flex-direction: column;
+}
+.destroyer{
+    background-color: var(--destroyer-color);
+    border: 1px solid var(--destroyer-border);
+}
+.submarine{
+    background-color: var(--submarine-color);
+    border: 1px solid var(--submarine-border);
+}
+.cruiser{
+    background-color: var(--cruiser-color);
+    border: 1px solid var(--cruiser-border);
+}
+.battleship{
+    background-color: var(--battleship-color);
+    border: 1px solid var(--battleship-border);
+}
+.carrier{
+    background-color: var(--carrier-color);
+    border: 1px solid var(--carrier-border);
 }
